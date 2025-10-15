@@ -1,0 +1,7 @@
+This will be a JSON file with information about all the available decks and stakes.
+
+The format will be 
+
+{Decks: ["deck name"],
+Stakes: ["stake name],}
+

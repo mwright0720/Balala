@@ -1,0 +1,8 @@
+Responsiblity: Display the deck and stake to the user in an organized way.
+
+Imports: StakeContainer
+
+Props: isStakeEnabled, deck, stake 
+
+Needs an object that takes the deck names and maps them to the image of the deck. 
+

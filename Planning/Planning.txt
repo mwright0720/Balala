@@ -1,0 +1,7 @@
+What do I want the app to do?
+
+The goal of the app is to show the user conditions that they must follow in their balatro run. 
+Conditions are things such as deck, stake selected, what jokers can't be purchased, what jokers must be purchased,
+what skip tags must be taken every single time. 
+
+The intial app will just be a deck randomizer with stake. The stake can be changed.

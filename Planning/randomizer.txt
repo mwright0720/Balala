@@ -1,0 +1,6 @@
+Responsiblity: Return a single entry from an array with distinct entries.
+
+Input: Array which contains what we want to randomize over.
+
+Output: A randomly selected value from the array. A string.
+

@@ -1,0 +1,37 @@
+The user clicks a button that says randomize deck. Then, a random deck will be selected.
+
+The user can also choose to randomize the stake if they want.
+
+
+What information does the app need?
+- The name of all 15 decks
+- All the available stakes
+- The image of all 15 decks and 8 stakes
+- Does the user want to randomize the deck?
+- Does the user want to randomize the stake? 
+- What stake is returned from the randomizer?
+- What deck is returned from the randomizer?
+- What object will be randomized?
+
+What components are needed?
+A container for the deck. The prop will be the deck name, which will then select an image from an object map.
+A container for the stake. The prop will be the stake name, which will then select an image an object map.
+A button that the user clicks to randomize the deck/stake. Props will be stakeSelected, deckSelected, onClick. 
+The first two props tell if the user wants to randomize the deck, the stake, or both. 
+
+Checkbox for opting in to randomize deck or stake. Props will be label and onClick, which will change the state of 
+isStakeEnabled and isDeckEnabled. 
+
+
+Files needed:
+App.tsx
+RandomizeBtn.tsx
+DeckContainer.tsx
+StakeContainer.tsx
+OptionsContainer.tsx
+OptionCheckbox.tsx
+randomizer.ts
+balatroInfo.json
+
+
+

@@ -1,0 +1,12 @@
+Responsiblity: Display the option to randomize to the user, and handle the click from the user.
+
+Props: isValidSelection, label, onClick, setSelectedDeck, setSelectedStake
+
+isValidSelection is a boolean that is true if at least one of isStakeEnabled and isDeckEnabled is true. 
+
+label is a string that will just be "Randomize".
+
+onClick will call the randomize function
+
+setSelectedDeck and setSelectedStake will use the results of the randomize function. 
+

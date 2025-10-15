@@ -1,0 +1,5 @@
+Responsiblity: Holds the checkboxes and their label. 
+
+Props: toggleDeckEnabled, toggleStakeEnabled
+these props are passed from main app to change state
+Imports: OptionCheckbox
