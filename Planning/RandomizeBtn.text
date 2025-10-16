@@ -6,7 +6,11 @@ isValidSelection is a boolean that is true if at least one of isStakeEnabled and
 
 label is a string that will just be "Randomize".
 
-onClick will call the randomize function
+onClick will call the randomize function, or a function saying that the selection isn't valid
 
 setSelectedDeck and setSelectedStake will use the results of the randomize function. 
+
+setSelectedDeck and setSelectedDeck can be part of the onClick function. 
+
+Which means only need to pass label and onClick, which is much more button y.
 

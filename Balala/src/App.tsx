@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { RandomizeBtn } from "./RandomizeBtn";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [deck, setDeck] = useState("");
+  const [stake, setStake] = useState("");
+  const [enabled, setEnabled] = useState({ Deck: true, Stake: true });
 
+  const handleBtnClick = () => {
+    // At least one thing has to be enabled
+    const invalidSelection = Object.values(enabled).every(
+      (selection) => selection === false
+    );
+
+    if (invalidSelection) {
+      // TODO Modify the page content to display this to the user
+      console.log("That selection is not valid");
+    } else {
+      // TODO configure this to work with the randomize function
+      setDeck("red deck");
+      setStake("gold stake");
+    }
+  };
   return (
-    <>
+    <div className="flex items-center justify-center">
+      <RandomizeBtn onClick={handleBtnClick} label="Randomize"></RandomizeBtn>
+
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        Deck name is {deck} on {stake}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
