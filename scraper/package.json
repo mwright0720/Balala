@@ -1,0 +1,22 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {},
+  "dependencies": {
+    "cheerio": "^1.1.0",
+    "puppeteer": "^24.25.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.8.1"
+  }
+}

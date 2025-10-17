@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { RandomizeBtn } from "./RandomizeBtn";
+import { DeckContainer } from "./DeckContainer";
 import "./App.css";
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
       <RandomizeBtn onClick={handleBtnClick} label="Randomize"></RandomizeBtn>
 
       <div>
-        Deck name is {deck} on {stake}
+        <DeckContainer isStakeEnabled={true} deck={deck} stake={stake} />
       </div>
     </div>
   );
