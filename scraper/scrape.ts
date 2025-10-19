@@ -1,20 +1,40 @@
-const { webkit } = require('playwright')
+const decksUrl = 'https://balatrowiki.org/w/Decks'
+// All decks have file name structure of 
+// /images/*/*_deck.png/*
+let decksMatch = /src="\/images\/thumb\/[A-Za-z]+_Deck\.png\/80px-[A-Za-z]+_Deck\.png\?[A-Za-z0-9]+"/g;
 
-const url = 'https://balatrowiki.org/w/Decks';
+fetch(decksUrl).then(response => {
+    // When the page is loaded convert it to text
+    return response.text()
+  })
+  .then(html => {
 
-(async () => {
-  const browser = await webkit.launch();
-  const context = await browser.newContext();
-  const page = await context.newPage();
-  await page.goto(url);
-  
-  const table = await page.locator('html.client-js.ve-available body.skin-vector-legacy.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.ns-0.ns-subject.mw-editable.page-Decks.rootpage-Decks.skin-vector.action-view.wgl-darkmode.wgl-theme-dark div#content.mw-body.ve-init-mw-desktopArticleTarget-targetContainer div#bodyContent.vector-body div#mw-content-text.mw-body-content div.mw-content-ltr.mw-parser-output table.wikitable.sortable.jquery-tablesorter')
+    
 
-  console.log(await table.allInnerTexts())
-  // Select all images from the table of decks
-  
 
-  await context.close();
-  await browser.close();
-})();
+    
 
+    const deckImages = html.match(decksMatch);
+
+    // Images now have the thumb and the size
+    // We just want deck type and its id
+    // Which happens to be the last part of the url
+
+    const finalImageUrls = [];
+    for (const image of deckImages) {
+      const newUrl = image.split('-')[1]
+      finalImageUrls.push(newUrl)
+    }
+
+    console.log(finalImageUrls)
+
+    
+
+
+
+    
+
+  })
+  .catch(error => {
+     console.error('Failed to fetch page: ', error)
+  })
