@@ -2,11 +2,14 @@ import { useState } from "react";
 import { RandomizeBtn } from "./RandomizeBtn";
 import { DeckContainer } from "./DeckContainer";
 import "./App.css";
+import { loadImages } from "./loadImages";
 
 function App() {
   const [deck, setDeck] = useState("");
   const [stake, setStake] = useState("");
   const [enabled, setEnabled] = useState({ Deck: true, Stake: true });
+
+  const { deckImages, stakeImages } = loadImages();
 
   const handleBtnClick = () => {
     // At least one thing has to be enabled
@@ -19,8 +22,8 @@ function App() {
       console.log("That selection is not valid");
     } else {
       // TODO configure this to work with the randomize function
-      setDeck("red deck");
-      setStake("gold stake");
+      setDeck("Red_Deck");
+      setStake("Gold_Stake");
     }
   };
   return (
@@ -28,7 +31,12 @@ function App() {
       <RandomizeBtn onClick={handleBtnClick} label="Randomize"></RandomizeBtn>
 
       <div>
-        <DeckContainer isStakeEnabled={true} deck={deck} stake={stake} />
+        <DeckContainer
+          isStakeEnabled={true}
+          deck={deck}
+          stake={stake}
+          deckImages={deckImages}
+        />
       </div>
     </div>
   );

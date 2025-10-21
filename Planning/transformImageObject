@@ -1,0 +1,5 @@
+Responsiblity: Modify the structure of the data so it's easier to work with.
+
+This means the deckImages object should be modified to {deck_name: path_to_img}
+And the stakeImages object should be modified to {stake_name: path_to_img}
+

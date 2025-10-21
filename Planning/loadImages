@@ -1,0 +1,10 @@
+Responsiblity: Load all the deck and stake images into two separate objects.
+
+Return these objects.
+
+The return value should be an object of strings, and not a promise.
+
+The ideal data shape would be:
+{deck name: path_to_img}
+
+So, there should also be a transform data function.
