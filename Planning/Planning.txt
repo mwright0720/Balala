@@ -5,3 +5,5 @@ Conditions are things such as deck, stake selected, what jokers can't be purchas
 what skip tags must be taken every single time. 
 
 The intial app will just be a deck randomizer with stake. The stake can be changed.
+
+Need to fix how images are loaded with vite.

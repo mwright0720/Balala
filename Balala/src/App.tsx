@@ -3,6 +3,7 @@ import { RandomizeBtn } from "./RandomizeBtn";
 import { DeckContainer } from "./DeckContainer";
 import "./App.css";
 import { loadImages } from "./loadImages";
+import { transformImageObject } from "./transformImageObject";
 
 function App() {
   const [deck, setDeck] = useState("");
@@ -10,6 +11,7 @@ function App() {
   const [enabled, setEnabled] = useState({ Deck: true, Stake: true });
 
   const { deckImages, stakeImages } = loadImages();
+  const transformedDeckImages = transformImageObject(deckImages);
 
   const handleBtnClick = () => {
     // At least one thing has to be enabled
@@ -35,7 +37,7 @@ function App() {
           isStakeEnabled={true}
           deck={deck}
           stake={stake}
-          deckImages={deckImages}
+          deckImages={transformedDeckImages}
         />
       </div>
     </div>
