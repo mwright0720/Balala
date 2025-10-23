@@ -1,5 +1,5 @@
 Responsiblity: Display the stake to the user. 
 
-Props: isStakeEnabled, stake
+Props: isStakeEnabled, stake, stakeImages
 
 Need an object that maps each possible stake with an image of the stake.

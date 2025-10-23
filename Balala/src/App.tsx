@@ -12,6 +12,11 @@ function App() {
 
   const { deckImages, stakeImages } = loadImages();
   const transformedDeckImages = transformImageObject(deckImages);
+  const transformedStakeImages = transformImageObject(stakeImages);
+
+  for (const elem of Object.entries(transformedStakeImages)) {
+    console.log(elem);
+  }
 
   const handleBtnClick = () => {
     // At least one thing has to be enabled
@@ -25,7 +30,7 @@ function App() {
     } else {
       // TODO configure this to work with the randomize function
       setDeck("Red_Deck");
-      setStake("Gold_Stake");
+      setStake("Gold_stake");
     }
   };
   return (
@@ -38,6 +43,7 @@ function App() {
           deck={deck}
           stake={stake}
           deckImages={transformedDeckImages}
+          stakeImages={transformedStakeImages}
         />
       </div>
     </div>
