@@ -4,6 +4,7 @@ import { DeckContainer } from "./DeckContainer";
 import "./App.css";
 import { loadImages } from "./loadImages";
 import { transformImageObject } from "./transformImageObject";
+import { randomizer } from "./randomizer";
 
 function App() {
   const [deck, setDeck] = useState("");
@@ -13,10 +14,6 @@ function App() {
   const { deckImages, stakeImages } = loadImages();
   const transformedDeckImages = transformImageObject(deckImages);
   const transformedStakeImages = transformImageObject(stakeImages);
-
-  for (const elem of Object.entries(transformedStakeImages)) {
-    console.log(elem);
-  }
 
   const handleBtnClick = () => {
     // At least one thing has to be enabled
@@ -29,8 +26,15 @@ function App() {
       console.log("That selection is not valid");
     } else {
       // TODO configure this to work with the randomize function
-      setDeck("Red_Deck");
-      setStake("Gold_stake");
+
+      const validDecks = Object.keys(transformedDeckImages);
+      const validStakes = Object.keys(transformedStakeImages);
+
+      const randomDeckSelection = randomizer(validDecks);
+      const randomStakeSelection = randomizer(validStakes);
+
+      setDeck(randomDeckSelection);
+      setStake(randomStakeSelection);
     }
   };
   return (
