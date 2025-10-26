@@ -5,6 +5,7 @@ import "./App.css";
 import { loadImages } from "./loadImages";
 import { transformImageObject } from "./transformImageObject";
 import { randomizer } from "./randomizer";
+import { OptionsContainer } from "./OptionsContainer";
 
 function App() {
   const [deck, setDeck] = useState("");
@@ -37,19 +38,36 @@ function App() {
       setStake(randomStakeSelection);
     }
   };
+
+  const handleDeckToggle = () => {
+    const isEnabled = enabled.Deck;
+    setEnabled({ ...enabled, Deck: !isEnabled });
+  };
+
+  const handleStakeToggle = () => {
+    const isEnabled = enabled.Stake;
+    setEnabled({ ...enabled, Stake: !isEnabled });
+  };
   return (
     <div className="flex items-center justify-center">
       <RandomizeBtn onClick={handleBtnClick} label="Randomize"></RandomizeBtn>
 
       <div>
         <DeckContainer
-          isStakeEnabled={true}
+          isStakeEnabled={enabled.Stake}
+          isDeckEnabled={enabled.Deck}
           deck={deck}
           stake={stake}
           deckImages={transformedDeckImages}
           stakeImages={transformedStakeImages}
         />
       </div>
+
+      <OptionsContainer
+        toggleDeckEnabled={handleDeckToggle}
+        toggleStakeEnabled={handleStakeToggle}
+        enabled={enabled}
+      />
     </div>
   );
 }
