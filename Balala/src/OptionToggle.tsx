@@ -10,7 +10,7 @@ const OptionToggle = ({ label, onToggle, isEnabled }: Props) => {
   if (isEnabled) {
     return (
       <ToggleButton
-        className={"bg-green-700 text-white aspect-square"}
+        className={"bg-green-700 text-white font-balatro px-3 aspect-square"}
         onChange={onToggle}
       >
         {label}
@@ -19,7 +19,7 @@ const OptionToggle = ({ label, onToggle, isEnabled }: Props) => {
   } else {
     return (
       <ToggleButton
-        className={"bg-neutral-200 text-white aspect-square"}
+        className={"bg-neutral-200 text-white px-3 font-balatro aspect-square"}
         onChange={onToggle}
       >
         {label}

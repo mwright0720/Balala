@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: balatro;
+  src: local("/assets/fonts/balatro.otf.woff2/balatro.otf.woff2");
+}
+
+@theme {
+  --font-balatro: "balatro";
+}

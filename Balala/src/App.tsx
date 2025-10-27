@@ -49,10 +49,8 @@ function App() {
     setEnabled({ ...enabled, Stake: !isEnabled });
   };
   return (
-    <div className="flex items-center justify-center">
-      <RandomizeBtn onClick={handleBtnClick} label="Randomize"></RandomizeBtn>
-
-      <div>
+    <div className="flex items-center justify-center bg-indigo-400 min-h-screen">
+      <div className="flex flex-col gap-8">
         <DeckContainer
           isStakeEnabled={enabled.Stake}
           isDeckEnabled={enabled.Deck}
@@ -61,6 +59,7 @@ function App() {
           deckImages={transformedDeckImages}
           stakeImages={transformedStakeImages}
         />
+        <RandomizeBtn onClick={handleBtnClick} label="Randomize"></RandomizeBtn>
       </div>
 
       <OptionsContainer

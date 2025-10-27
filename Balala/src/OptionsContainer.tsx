@@ -13,17 +13,20 @@ const OptionsContainer = ({
 }: Props) => {
   return (
     <div className="flex  flex-col space-around gap-2">
-      I want to randomize
-      <OptionToggle
-        label={"stake"}
-        onToggle={toggleStakeEnabled}
-        isEnabled={enabled.Stake}
-      />
-      <OptionToggle
-        label={"deck"}
-        onToggle={toggleDeckEnabled}
-        isEnabled={enabled.Deck}
-      />
+      <h2>I want to randomize</h2>
+
+      <div className="flex space-evenly gap-6">
+        <OptionToggle
+          label={"stake"}
+          onToggle={toggleStakeEnabled}
+          isEnabled={enabled.Stake}
+        />
+        <OptionToggle
+          label={"deck"}
+          onToggle={toggleDeckEnabled}
+          isEnabled={enabled.Deck}
+        />
+      </div>
     </div>
   );
 };

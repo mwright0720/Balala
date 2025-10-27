@@ -8,7 +8,7 @@ type PropsType = {
 const RandomizeBtn = ({ label, onClick }: PropsType) => {
   return (
     <Button
-      className="font-md text-center text-white  px-4 bg-red-500"
+      className="text-lg font-balatro text-center text-white  px-8 py-2 bg-red-500"
       onClick={onClick}
     >
       {label}
