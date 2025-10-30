@@ -3,7 +3,7 @@ type Props = {
   stakeImages: Record<string, string>;
 };
 const StakeContainer = ({ stake, stakeImages }: Props) => {
-  const imgSrc = stakeImages[stake];
+  const imgSrc = "./Balala/" + stakeImages[stake];
   return (
     <div className="rounded-full aspect-square">
       <img src={imgSrc}></img>

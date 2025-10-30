@@ -26,8 +26,6 @@ function App() {
       // TODO Modify the page content to display this to the user
       console.log("That selection is not valid");
     } else {
-      // TODO configure this to work with the randomize function
-
       const validDecks = Object.keys(transformedDeckImages);
       const validStakes = Object.keys(transformedStakeImages);
 
