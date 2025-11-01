@@ -17,11 +17,15 @@ const DeckContainer = ({
   stakeImages,
 }: PropsType) => {
   const imgSrc = deckImages[deck];
+  console.log("The img src is : " + imgSrc);
+  const newImgSrc =
+    "/Balala/" + imgSrc.replace("../", "").replace("/public", "");
+  console.log("The new img src is: " + newImgSrc);
   const imgAltText = "Image of " + deck;
 
   return (
     <div className=" flex bg-zinc-800 text-gray-50 min-h-50 min-w-50  border border-4  bg-opacity-50 border-white">
-      {isDeckEnabled && <img src={imgSrc} alt={imgAltText}></img>}
+      {isDeckEnabled && <img src={newImgSrc} alt={imgAltText}></img>}
       {isStakeEnabled && (
         <StakeContainer stake={stake as string} stakeImages={stakeImages} />
       )}

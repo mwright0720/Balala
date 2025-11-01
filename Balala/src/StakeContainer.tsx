@@ -4,9 +4,11 @@ type Props = {
 };
 const StakeContainer = ({ stake, stakeImages }: Props) => {
   const imgSrc = stakeImages[stake];
+  const newImgSrc =
+    "/Balala/" + imgSrc.replace("../", "").replace("/public", "");
   return (
     <div className="rounded-full aspect-square">
-      <img src={imgSrc}></img>
+      <img src={newImgSrc}></img>
     </div>
   );
 };
