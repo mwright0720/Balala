@@ -26,6 +26,20 @@ def get_stake_image_urls(soup):
     
     return finalUrls
 
+def get_joker_image_urls(soup):
+    # 
+    regexPattern = ''
+
+    imgSrcs = re.findall(regexPattern, str(soup))
+    finalUrls = []
+
+    for srcUrl in imgSrcs:
+        finalizedUrl = srcUrl.split('"')[-1]
+        finalUrls.append(finalizedUrl)
+    
+    return finalUrls
+
+    print(imgSrcs)
 def get_page_html(url):
     page = requests.get(url)
     return page
@@ -80,10 +94,28 @@ def save_stake_files():
     
     save_all_images_locally(finalUrls, 'assets')
 
+
+def save_joker_files():
+    url='https://balatrowiki.org/w/Jokers#List_of_Jokers'
+    imageBaseUrl = 'https://balatrowiki.org'
+
+    pageHTML = get_page_html(url)
+    soup = get_soup(pageHTML)
+
+    finalUrlEnds = get_joker_image_urls(soup)
+    finalUrls = []
+    for urlEnd in finalUrlEnds:
+        finalUrls.append(imageBaseUrl + urlEnd)
     
+    print(finalUrls)
+    
+    #save_all_images_locally(finalUrls, 'assets')
+
+    
+    #finalUrlEnds = get_joker_image_urls(soup)
 
 def main():
-    save_stake_files()
+    save_joker_files()
 
     
     

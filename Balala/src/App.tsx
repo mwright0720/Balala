@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { RandomizeBtn } from "./RandomizeBtn";
-import { DeckContainer } from "./DeckContainer";
+import { DeckContainer } from "./deck-randomizer/DeckContainer";
 import "./App.css";
 import { loadImages } from "./loadImages";
 import { transformImageObject } from "./transformImageObject";

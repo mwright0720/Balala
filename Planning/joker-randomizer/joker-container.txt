@@ -1,0 +1,4 @@
+Purpose: Display all randomly generated jokers to the user.
+
+Props: jokerList : An array of all jokers that will be displayed to user. Each joker will be represented by an object, where the
+key is the joker's name, displayed on hover, and the value is the link to the image. 

@@ -1,0 +1,14 @@
+The user can click randomize, and be shown a certain number of jokers that they must purchase if they see it.
+
+They are not allowed to sell the joker, destroying it is allowed. 
+
+So first, all 100+ jokers need to be scraped and added. 
+
+Then, the jokers can be displayed to the user.
+
+The user can change how many jokers (let's do max of 5).
+
+The user can also choose if they want to randomize their jokers, or just the deck.
+
+The jokers that can be purchased will be displayed in a small rectangle, kinda like in the game.
+

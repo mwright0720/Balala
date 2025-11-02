@@ -1,0 +1,3 @@
+Need to scrape all the jokers. Will try a similar approach to the other scraping, which is to find a specific
+regex that gets what I want, and then get that. 
+

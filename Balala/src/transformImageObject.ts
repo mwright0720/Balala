@@ -12,7 +12,10 @@ const transformImageObject = (imageObject: Record<string, string>) => {
     
     for (const key of keys) {
         const newObjectKey = key.split('/').at(-1)?.replace('.png', '');
-        newObjectValues.push(key);
+        const imagePath = key.replace('../public', '/Balala');
+
+
+        newObjectValues.push(imagePath);
         newObjectKeys.push(newObjectKey);
         
     }
@@ -24,6 +27,14 @@ const transformImageObject = (imageObject: Record<string, string>) => {
 
    });
 
+   console.log('The input is ', imageObject);
+   console.log('The image object is: ');
+
+   for (const keys of Object.keys(newObject)) {
+    console.log('Key is', keys);
+    console.log('Value is', newObject[keys]);
+
+   }
    return newObject;
 
 }
