@@ -28,18 +28,27 @@ def get_stake_image_urls(soup):
 
 def get_joker_image_urls(soup):
     # 
-    regexPattern = ''
+    table = soup.select("table.wikitable.sortable")[0]
 
-    imgSrcs = re.findall(regexPattern, str(soup))
+    
     finalUrls = []
+    imgSrcs = []
+
+    images = table.find_all("img")
+
+    for img in images:
+        src=img.get("srcset")
+        imgSrcs.append(src)
 
     for srcUrl in imgSrcs:
-        finalizedUrl = srcUrl.split('"')[-1]
-        finalUrls.append(finalizedUrl)
-    
+
+        if srcUrl:
+            finalizedUrl = srcUrl.split(' ')[0]
+            finalUrls.append(finalizedUrl)
+
+    print(finalUrls)
     return finalUrls
 
-    print(imgSrcs)
 def get_page_html(url):
     page = requests.get(url)
     return page
@@ -61,7 +70,7 @@ def save_all_images_locally(srcList, destination):
 def get_image_name(imageUrl):
     firstPart, secondPart = imageUrl.split('images/', 1)
     result = secondPart.split('?', 1)
-    return result[0]
+    return result[0].replace('/', '_')
 
 
 def save_image_files():
@@ -102,14 +111,20 @@ def save_joker_files():
     pageHTML = get_page_html(url)
     soup = get_soup(pageHTML)
 
+    
+
     finalUrlEnds = get_joker_image_urls(soup)
     finalUrls = []
+
+    
+   
+
     for urlEnd in finalUrlEnds:
         finalUrls.append(imageBaseUrl + urlEnd)
     
-    print(finalUrls)
+    print(len(finalUrls))
     
-    #save_all_images_locally(finalUrls, 'assets')
+    save_all_images_locally(finalUrls, 'assets')
 
     
     #finalUrlEnds = get_joker_image_urls(soup)
